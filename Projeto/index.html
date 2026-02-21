@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viaje Bem</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div>
+            <h1>Viaje Bem</h1>
+            <p>Planeje sua viagem a partir de 2026</p>
+        </div>
+    </header>
+
+    <main>
+
+        <section aria-labelledby="titulo-busca">
+            <h2 id="titulo-busca">Buscar Passagens</h2>
+
+            <!-- Tipo de Viagem -->
+            <div>
+                <fieldset>
+                    <legend>Tipo de viagem</legend>
+
+                    <!-- name precisa ser "tipo" -->
+                    <label>
+                        <input type="radio" name="tipo" value="ida-volta" checked>
+                        Ida e volta
+                    </label>
+
+                    <label>
+                        <input type="radio" name="tipo" value="so-ida">
+                        Só ida
+                    </label>
+                </fieldset>
+            </div>
+
+            <form>
+
+                <!-- Origem e Destino -->
+                <div>
+                    <div>
+                        <label for="origem">Origem</label>
+                        <select id="origem" required>
+                            <option value="">Selecione</option>
+                            <option>Fortaleza</option>
+                            <option>São Paulo</option>
+                            <option>Rio de Janeiro</option>
+                            <option>Salvador</option>
+                            <option>Lisboa</option>
+                            <option>Paris</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="destino">Destino</label>
+                        <select id="destino" required>
+                            <option value="">Selecione</option>
+                            <option>Fortaleza</option>
+                            <option>São Paulo</option>
+                            <option>Rio de Janeiro</option>
+                            <option>Salvador</option>
+                            <option>Lisboa</option>
+                            <option>Paris</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Datas -->
+                <div>
+                    <div>
+                        <label for="data-ida">Data de ida</label>
+                        <!-- ID precisa ser data-ida -->
+                        <input 
+                            type="date"
+                            id="data-ida"
+                            min="2026-01-01"
+                            required>
+                    </div>
+
+                    <!-- container precisa ter id campo-volta -->
+                    <div id="campo-volta">
+                        <label for="data-volta">Data de volta</label>
+                        <!-- ID precisa ser data-volta -->
+                        <input 
+                            type="date"
+                            id="data-volta"
+                            min="2026-01-01">
+                    </div>
+                </div>
+
+                <!-- Passageiros -->
+                <div>
+                    <label for="passageiros">Quantidade de passageiros</label>
+                    <input 
+                        type="number"
+                        id="passageiros"
+                        min="1"
+                        max="9"
+                        value="1"
+                        required>
+                </div>
+
+                <div>
+                    <button type="submit">Buscar voos</button>
+                </div>
+
+            </form>
+        </section>
+
+        <!-- RESULTADOS -->
+        <section aria-labelledby="titulo-resultados">
+            <h2 id="titulo-resultados">Resultados</h2>
+            <!-- ID precisa ser resultado (sem S) -->
+            <div id="resultado"></div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>© 2026 Viaje Bem - Todos os direitos reservados</p>
+    </footer>
+
+    <!-- IMPORTANTE: conectar JS -->
+    <script src="script.js"></script>
+
+</body>
+</html>
